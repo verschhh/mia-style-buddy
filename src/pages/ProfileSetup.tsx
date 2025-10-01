@@ -3,16 +3,40 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 const STYLE_INSPIRATIONS = [
-  "Casual", "Streetwear", "Minimalist", "Business", "Sporty",
-  "Vintage", "Elegant", "Punk", "Y2K", "Skater",
-  "Chic", "Techwear", "Boho", "Grunge", "Formal"
+  "Casual",
+  "Streetwear",
+  "Minimalist",
+  "Business",
+  "Sporty",
+  "Vintage",
+  "Elegant",
+  "Punk",
+  "Y2K",
+  "Skater",
+  "Chic",
+  "Techwear",
+  "Boho",
+  "Grunge",
+  "Formal",
 ];
 
 const ProfileSetup = () => {
@@ -30,12 +54,12 @@ const ProfileSetup = () => {
     waist: "",
     hips: "",
     gender: "",
-    style: ""
+    style: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation
     if (!formData.name || !formData.email || !formData.password) {
       toast.error("Please fill in all required fields");
@@ -52,26 +76,30 @@ const ProfileSetup = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary p-4 flex items-center justify-center">
       <Card className="w-full max-w-2xl shadow-xl">
         <CardHeader className="text-center space-y-2">
-          <CardTitle className="text-4xl font-bold bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text text-transparent">
+          <CardTitle className="text-4xl font-bold from-primary via-accent to-primary-dark bg-clip-text">
             Welcome to MIA
           </CardTitle>
           <CardDescription className="text-base">
             Your Intelligent Shopping Assistant
           </CardDescription>
         </CardHeader>
-        
+
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Account Details */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-primary">Account Details</h3>
-              
+              <h3 className="text-lg font-semibold text-primary">
+                Account Details
+              </h3>
+
               <div className="space-y-2">
                 <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   placeholder="Enter your name"
                   required
                 />
@@ -83,7 +111,9 @@ const ProfileSetup = () => {
                   id="email"
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   placeholder="your.email@example.com"
                   required
                 />
@@ -95,7 +125,9 @@ const ProfileSetup = () => {
                   id="password"
                   type="password"
                   value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                   placeholder="Create a password"
                   required
                 />
@@ -104,18 +136,27 @@ const ProfileSetup = () => {
 
             {/* Size Information */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-primary">Size Information</h3>
-              
+              <h3 className="text-lg font-semibold text-primary">
+                Size Information
+              </h3>
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="tshirt">T-shirt Size</Label>
-                  <Select value={formData.tshirt} onValueChange={(value) => setFormData({ ...formData, tshirt: value })}>
+                  <Select
+                    value={formData.tshirt}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, tshirt: value })
+                    }
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
                     <SelectContent>
-                      {["XS", "S", "M", "L", "XL", "XXL"].map(size => (
-                        <SelectItem key={size} value={size}>{size}</SelectItem>
+                      {["XS", "S", "M", "L", "XL", "XXL"].map((size) => (
+                        <SelectItem key={size} value={size}>
+                          {size}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -123,14 +164,23 @@ const ProfileSetup = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="trousers">Trousers Size</Label>
-                  <Select value={formData.trousers} onValueChange={(value) => setFormData({ ...formData, trousers: value })}>
+                  <Select
+                    value={formData.trousers}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, trousers: value })
+                    }
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
                     <SelectContent>
-                      {["28", "30", "32", "34", "36", "38", "40"].map(size => (
-                        <SelectItem key={size} value={size}>{size}</SelectItem>
-                      ))}
+                      {["28", "30", "32", "34", "36", "38", "40"].map(
+                        (size) => (
+                          <SelectItem key={size} value={size}>
+                            {size}
+                          </SelectItem>
+                        )
+                      )}
                     </SelectContent>
                   </Select>
                 </div>
@@ -141,20 +191,29 @@ const ProfileSetup = () => {
                     id="shoes"
                     type="number"
                     value={formData.shoes}
-                    onChange={(e) => setFormData({ ...formData, shoes: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, shoes: e.target.value })
+                    }
                     placeholder="42"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="jacket">Jacket Size</Label>
-                  <Select value={formData.jacket} onValueChange={(value) => setFormData({ ...formData, jacket: value })}>
+                  <Select
+                    value={formData.jacket}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, jacket: value })
+                    }
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
                     <SelectContent>
-                      {["XS", "S", "M", "L", "XL", "XXL"].map(size => (
-                        <SelectItem key={size} value={size}>{size}</SelectItem>
+                      {["XS", "S", "M", "L", "XL", "XXL"].map((size) => (
+                        <SelectItem key={size} value={size}>
+                          {size}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -164,8 +223,10 @@ const ProfileSetup = () => {
 
             {/* Measurements */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-primary">Measurements (cm)</h3>
-              
+              <h3 className="text-lg font-semibold text-primary">
+                Measurements (cm)
+              </h3>
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="height">Height</Label>
@@ -173,7 +234,9 @@ const ProfileSetup = () => {
                     id="height"
                     type="number"
                     value={formData.height}
-                    onChange={(e) => setFormData({ ...formData, height: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, height: e.target.value })
+                    }
                     placeholder="175"
                   />
                 </div>
@@ -184,7 +247,9 @@ const ProfileSetup = () => {
                     id="chest"
                     type="number"
                     value={formData.chest}
-                    onChange={(e) => setFormData({ ...formData, chest: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, chest: e.target.value })
+                    }
                     placeholder="95"
                   />
                 </div>
@@ -195,7 +260,9 @@ const ProfileSetup = () => {
                     id="waist"
                     type="number"
                     value={formData.waist}
-                    onChange={(e) => setFormData({ ...formData, waist: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, waist: e.target.value })
+                    }
                     placeholder="80"
                   />
                 </div>
@@ -206,7 +273,9 @@ const ProfileSetup = () => {
                     id="hips"
                     type="number"
                     value={formData.hips}
-                    onChange={(e) => setFormData({ ...formData, hips: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, hips: e.target.value })
+                    }
                     placeholder="95"
                   />
                 </div>
@@ -216,7 +285,12 @@ const ProfileSetup = () => {
             {/* Gender */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-primary">Gender</h3>
-              <RadioGroup value={formData.gender} onValueChange={(value) => setFormData({ ...formData, gender: value })}>
+              <RadioGroup
+                value={formData.gender}
+                onValueChange={(value) =>
+                  setFormData({ ...formData, gender: value })
+                }
+              >
                 <div className="flex gap-4">
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="male" id="male" />
@@ -236,20 +310,34 @@ const ProfileSetup = () => {
 
             {/* Style Inspiration */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-primary">Style Inspiration</h3>
-              <Select value={formData.style} onValueChange={(value) => setFormData({ ...formData, style: value })}>
+              <h3 className="text-lg font-semibold text-primary">
+                Style Inspiration
+              </h3>
+              <Select
+                value={formData.style}
+                onValueChange={(value) =>
+                  setFormData({ ...formData, style: value })
+                }
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Choose your style" />
                 </SelectTrigger>
                 <SelectContent>
-                  {STYLE_INSPIRATIONS.map(style => (
-                    <SelectItem key={style} value={style.toLowerCase()}>{style}</SelectItem>
+                  {STYLE_INSPIRATIONS.map((style) => (
+                    <SelectItem key={style} value={style.toLowerCase()}>
+                      {style}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
-            <Button type="submit" variant="gradient" size="lg" className="w-full">
+            <Button
+              type="submit"
+              variant="secondary"
+              size="lg"
+              className="w-full"
+            >
               Next
               <ArrowRight className="ml-2" />
             </Button>

@@ -7,11 +7,12 @@ import { toast } from "sonner";
 // Mock data
 const MOCK_ITEM = {
   id: 1,
-  name: "Classic White Tee",
+  name: "Classic black Tee",
   category: "T-Shirt",
   price: 29.99,
-  description: "A timeless classic that never goes out of style. Made from premium cotton for ultimate comfort.",
-  image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop",
+  description:
+    "A timeless classic that never goes out of style. Made from premium cotton for ultimate comfort.",
+  image: "assets/clothes/tshirt-noir.jpg",
   sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   colors: ["White", "Black", "Gray"],
 };
@@ -58,9 +59,15 @@ const ItemPreview = () => {
         {/* Details */}
         <div className="space-y-6">
           <div>
-            <p className="text-sm text-muted-foreground uppercase tracking-wide">{MOCK_ITEM.category}</p>
-            <h1 className="text-3xl font-bold text-foreground mt-1">{MOCK_ITEM.name}</h1>
-            <p className="text-2xl font-bold text-primary mt-2">${MOCK_ITEM.price}</p>
+            <p className="text-sm text-muted-foreground uppercase tracking-wide">
+              {MOCK_ITEM.category}
+            </p>
+            <h1 className="text-3xl font-bold text-foreground mt-1">
+              {MOCK_ITEM.name}
+            </h1>
+            <p className="text-2xl font-bold text-primary mt-2">
+              ${MOCK_ITEM.price}
+            </p>
           </div>
 
           <Card>
@@ -101,7 +108,12 @@ const ItemPreview = () => {
       {/* Fixed Bottom Actions */}
       <div className="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-lg border-t border-border p-4">
         <div className="max-w-4xl mx-auto">
-          <Button onClick={handleAddToCart} variant="gradient" size="xl" className="w-full">
+          <Button
+            onClick={handleAddToCart}
+            variant="gradient"
+            size="xl"
+            className="w-full"
+          >
             <ShoppingBag className="mr-2" />
             Add to Cart
           </Button>

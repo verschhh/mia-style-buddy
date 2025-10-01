@@ -2,8 +2,20 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { QrCode, KeyRound } from "lucide-react";
 import { toast } from "sonner";
@@ -36,7 +48,7 @@ const ActivateMIA = () => {
           <div className="mx-auto w-24 h-24 bg-gradient-to-br from-primary via-accent to-primary-dark rounded-full flex items-center justify-center pulse-glow">
             <QrCode className="w-12 h-12 text-white" />
           </div>
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text text-transparent">
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text">
             Scan me to activate MIA
           </CardTitle>
           <CardDescription>
@@ -85,7 +97,11 @@ const ActivateMIA = () => {
                     placeholder="Enter your code"
                   />
                 </div>
-                <Button onClick={handleCodeSubmit} variant="gradient" className="w-full">
+                <Button
+                  onClick={handleCodeSubmit}
+                  variant="gradient"
+                  className="w-full"
+                >
                   Activate MIA
                 </Button>
               </div>

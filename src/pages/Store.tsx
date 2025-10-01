@@ -11,7 +11,7 @@ const Store = () => {
       <div className="max-w-4xl mx-auto space-y-8 pt-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold from-primary via-accent to-primary-dark bg-clip-text">
             MIA Store
           </h1>
           <p className="text-lg text-muted-foreground">
@@ -30,12 +30,17 @@ const Store = () => {
                 <Grid className="w-8 h-8 text-white" />
               </div>
               <div className="space-y-2">
-                <h2 className="text-2xl font-bold text-foreground">Browse Items</h2>
+                <h2 className="text-2xl font-bold text-foreground">
+                  Browse Items
+                </h2>
                 <p className="text-muted-foreground">
                   Explore our curated collection of fashion items
                 </p>
               </div>
-              <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
+              <Button
+                variant="ghost"
+                className="w-full group-hover:bg-primary group-hover:text-white transition-colors"
+              >
                 Start Browsing
               </Button>
             </div>
@@ -50,12 +55,17 @@ const Store = () => {
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <div className="space-y-2">
-                <h2 className="text-2xl font-bold text-foreground">Custom Recommendation</h2>
+                <h2 className="text-2xl font-bold text-foreground">
+                  Custom Recommendation
+                </h2>
                 <p className="text-muted-foreground">
                   Get AI-powered personalized style suggestions
                 </p>
               </div>
-              <Button variant="ghost" className="w-full group-hover:bg-accent group-hover:text-white transition-colors">
+              <Button
+                variant="ghost"
+                className="w-full group-hover:bg-accent group-hover:text-white transition-colors"
+              >
                 Get Recommendations
               </Button>
             </div>

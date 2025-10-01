@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Heart, X, Shirt } from "lucide-react";
 import { toast } from "sonner";
@@ -9,17 +15,82 @@ import { toast } from "sonner";
 // Mock data
 const MOCK_RECOMMENDATIONS = {
   tshirt: [
-    { id: 1, name: "Vintage Band Tee", price: 34.99, image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=600&fit=crop" },
-    { id: 2, name: "Plain White Tee", price: 24.99, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=600&fit=crop" },
+    {
+      id: 1,
+      name: "Vintage Band Tee",
+      price: 34.99,
+      image: "assets/clothes/tshirt-noir.jpg",
+    },
+    {
+      id: 2,
+      name: "Plain White Tee",
+      price: 24.99,
+      image: "assets/clothes/top-bleu.jpg",
+    },
   ],
   jacket: [
-    { id: 3, name: "Denim Jacket", price: 89.99, image: "https://images.unsplash.com/photo-1543076659-9380cdf10613?w=400&h=600&fit=crop" },
+    {
+      id: 3,
+      name: "Denim Jacket",
+      price: 89.99,
+      image: "assets/clothes/veste-bleu-marine.jpg",
+    },
+    {
+      id: 8,
+      name: "Leather Jacket",
+      price: 149.99,
+      image: "assets/clothes/brown-jacket.jpg",
+    },
+    {
+      id: 9,
+      name: "Bomber Jacket",
+      price: 99.99,
+      image: "assets/clothes/pull-gris.jpg",
+    },
   ],
   shoes: [
-    { id: 4, name: "Classic Sneakers", price: 119.99, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=600&fit=crop" },
+    {
+      id: 4,
+      name: "Classic Sneakers",
+      price: 119.99,
+      image: "assets/clothes/chaussure.jpg",
+    },
   ],
   trousers: [
-    { id: 5, name: "Slim Jeans", price: 69.99, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=600&fit=crop" },
+    {
+      id: 5,
+      name: "Slim Jeans",
+      price: 69.99,
+      image: "assets/clothes/jean-bleu.jpg",
+    },
+    {
+      id: 6,
+      name: "Chino Pants",
+      price: 59.99,
+      image: "assets/clothes/pantalon-bleu-marine.jpg",
+    },
+    {
+      id: 7,
+      name: "Cargo Pants",
+      price: 74.99,
+      image: "assets/clothes/pantalon-marron.jpg",
+    },
+  ],
+  bags: [
+    {
+      id: 10,
+      name: "Leather Backpack",
+      price: 129.99,
+      image: "assets/clothes/black-bag.jpg",
+    },
+  ],
+  hats: [
+    {
+      id: 11,
+      name: "Baseball Cap",
+      price: 29.99,
+      image: "assets/clothes/casquette.jpg",
+    },
   ],
 };
 
@@ -28,9 +99,13 @@ const Recommendations = () => {
   const [category, setCategory] = useState<string>("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSwipping, setIsSwipping] = useState(false);
-  const [swipeDirection, setSwipeDirection] = useState<"left" | "right" | null>(null);
+  const [swipeDirection, setSwipeDirection] = useState<"left" | "right" | null>(
+    null
+  );
 
-  const currentItems = category ? MOCK_RECOMMENDATIONS[category as keyof typeof MOCK_RECOMMENDATIONS] || [] : [];
+  const currentItems = category
+    ? MOCK_RECOMMENDATIONS[category as keyof typeof MOCK_RECOMMENDATIONS] || []
+    : [];
   const currentItem = currentItems[currentIndex];
 
   const handleSwipe = (direction: "left" | "right") => {
@@ -57,7 +132,11 @@ const Recommendations = () => {
       <div className="max-w-2xl mx-auto space-y-6 pt-4">
         {/* Header */}
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" onClick={() => navigate("/store")}>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => navigate("/store")}
+          >
             <ArrowLeft />
           </Button>
           <h1 className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text text-transparent">
@@ -66,7 +145,13 @@ const Recommendations = () => {
         </div>
 
         {/* Category Selection */}
-        <Select value={category} onValueChange={(value) => { setCategory(value); setCurrentIndex(0); }}>
+        <Select
+          value={category}
+          onValueChange={(value) => {
+            setCategory(value);
+            setCurrentIndex(0);
+          }}
+        >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Choose a category" />
           </SelectTrigger>
@@ -75,6 +160,8 @@ const Recommendations = () => {
             <SelectItem value="jacket">Jackets</SelectItem>
             <SelectItem value="shoes">Shoes</SelectItem>
             <SelectItem value="trousers">Trousers</SelectItem>
+            <SelectItem value="bags">Bags</SelectItem>
+            <SelectItem value="hats">Hats</SelectItem>
           </SelectContent>
         </Select>
 
@@ -83,7 +170,11 @@ const Recommendations = () => {
           <div className="relative">
             <Card
               className={`overflow-hidden shadow-2xl ${
-                isSwipping ? (swipeDirection === "left" ? "swipe-left" : "swipe-right") : ""
+                isSwipping
+                  ? swipeDirection === "left"
+                    ? "swipe-left"
+                    : "swipe-right"
+                  : ""
               }`}
             >
               <div className="aspect-[3/4] overflow-hidden">
@@ -95,8 +186,12 @@ const Recommendations = () => {
               </div>
               <CardContent className="p-6 space-y-4">
                 <div>
-                  <h2 className="text-2xl font-bold text-foreground">{currentItem.name}</h2>
-                  <p className="text-xl text-primary font-semibold">${currentItem.price}</p>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    {currentItem.name}
+                  </h2>
+                  <p className="text-xl text-primary font-semibold">
+                    ${currentItem.price}
+                  </p>
                 </div>
 
                 {/* Action Buttons */}
@@ -137,7 +232,9 @@ const Recommendations = () => {
           </div>
         ) : (
           <Card className="p-12 text-center">
-            <p className="text-muted-foreground">Select a category to get started</p>
+            <p className="text-muted-foreground">
+              Select a category to get started
+            </p>
           </Card>
         )}
       </div>
