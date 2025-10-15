@@ -17,41 +17,41 @@ const MOCK_RECOMMENDATIONS = {
   tshirt: [
     {
       id: 1,
-      name: "Vintage Band Tee",
+      name: "Black T-Shirt",
       price: 34.99,
       image: "assets/clothes/tshirt-noir.jpg",
     },
     {
       id: 2,
-      name: "Plain White Tee",
-      price: 24.99,
+      name: "Blue Top",
+      price: 44.99,
       image: "assets/clothes/top-bleu.jpg",
     },
   ],
   jacket: [
     {
       id: 3,
-      name: "Denim Jacket",
-      price: 89.99,
+      name: "Navy Blazer Jacket",
+      price: 129.99,
       image: "assets/clothes/veste-bleu-marine.jpg",
     },
     {
       id: 8,
-      name: "Leather Jacket",
+      name: "Brown Bomber Jacket",
       price: 149.99,
       image: "assets/clothes/brown-jacket.jpg",
     },
     {
       id: 9,
-      name: "Bomber Jacket",
-      price: 99.99,
+      name: "Grey Sweater",
+      price: 79.99,
       image: "assets/clothes/pull-gris.jpg",
     },
   ],
   shoes: [
     {
       id: 4,
-      name: "Classic Sneakers",
+      name: "Brown Suede Boots",
       price: 119.99,
       image: "assets/clothes/chaussure.jpg",
     },
@@ -59,27 +59,27 @@ const MOCK_RECOMMENDATIONS = {
   trousers: [
     {
       id: 5,
-      name: "Slim Jeans",
+      name: "Blue Cargo Jeans",
       price: 69.99,
       image: "assets/clothes/jean-bleu.jpg",
     },
     {
       id: 6,
-      name: "Chino Pants",
-      price: 59.99,
+      name: "Navy Dress Pants",
+      price: 89.99,
       image: "assets/clothes/pantalon-bleu-marine.jpg",
     },
     {
       id: 7,
-      name: "Cargo Pants",
-      price: 74.99,
+      name: "Brown Tailored Trousers",
+      price: 94.99,
       image: "assets/clothes/pantalon-marron.jpg",
     },
   ],
   bags: [
     {
       id: 10,
-      name: "Leather Backpack",
+      name: "Studded Black Hobo Bag",
       price: 129.99,
       image: "assets/clothes/black-bag.jpg",
     },
@@ -87,7 +87,7 @@ const MOCK_RECOMMENDATIONS = {
   hats: [
     {
       id: 11,
-      name: "Baseball Cap",
+      name: "Black Baseball Cap",
       price: 29.99,
       image: "assets/clothes/casquette.jpg",
     },
