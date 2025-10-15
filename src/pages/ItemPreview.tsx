@@ -1,33 +1,154 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { ArrowLeft, Heart, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 
-// Mock data
-const MOCK_ITEM = {
-  id: 1,
-  name: "Classic black Tee",
-  category: "T-Shirt",
-  price: 29.99,
-  description:
-    "A timeless classic that never goes out of style. Made from premium cotton for ultimate comfort.",
-  image: "assets/clothes/tshirt-noir.jpg",
-  sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-  colors: ["White", "Black", "Gray"],
-};
+// Reuse the same dataset as Browse
+import tshirtNoir from "@/assets/clothes/tshirt-noir.jpg";
+import topBleu from "@/assets/clothes/top-bleu.jpg";
+import vesteBleuMarine from "@/assets/clothes/veste-bleu-marine.jpg";
+import brownJacket from "@/assets/clothes/brown-jacket.jpg";
+import pullGris from "@/assets/clothes/pull-gris.jpg";
+import chaussure from "@/assets/clothes/chaussure.jpg";
+import jeanBleu from "@/assets/clothes/jean-bleu.jpg";
+import pantalonBleuMarine from "@/assets/clothes/pantalon-bleu-marine.jpg";
+import pantalonMarron from "@/assets/clothes/pantalon-marron.jpg";
+import blackBag from "@/assets/clothes/black-bag.jpg";
+import casquette from "@/assets/clothes/casquette.jpg";
+
+// Same data structure as Browse
+const MOCK_ITEMS = [
+  {
+    id: 1,
+    name: "Black T-Shirt",
+    category: "tshirt",
+    price: 34.99,
+    image: tshirtNoir,
+    description: "A timeless classic in black.",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    colors: ["Black", "White", "Gray"],
+  },
+  {
+    id: 2,
+    name: "Blue Top",
+    category: "tshirt",
+    price: 44.99,
+    image: topBleu,
+    description: "Comfortable blue top.",
+    sizes: ["S", "M", "L"],
+    colors: ["Blue", "White"],
+  },
+  {
+    id: 3,
+    name: "Navy Blazer Jacket",
+    category: "jacket",
+    price: 129.99,
+    image: vesteBleuMarine,
+    description: "Smart navy blazer.",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Navy", "Black"],
+  },
+  {
+    id: 4,
+    name: "Brown Bomber Jacket",
+    category: "jacket",
+    price: 149.99,
+    image: brownJacket,
+    description: "Stylish brown bomber.",
+    sizes: ["M", "L", "XL"],
+    colors: ["Brown", "Tan"],
+  },
+  {
+    id: 5,
+    name: "Grey Sweater",
+    category: "jacket",
+    price: 79.99,
+    image: pullGris,
+    description: "Cozy grey sweater.",
+    sizes: ["S", "M", "L"],
+    colors: ["Grey"],
+  },
+  {
+    id: 6,
+    name: "Brown Suede Boots",
+    category: "shoes",
+    price: 119.99,
+    image: chaussure,
+    description: "Premium suede boots.",
+    sizes: ["40", "41", "42", "43"],
+    colors: ["Brown"],
+  },
+  {
+    id: 7,
+    name: "Blue Cargo Jeans",
+    category: "trousers",
+    price: 69.99,
+    image: jeanBleu,
+    description: "Casual cargo jeans.",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Blue"],
+  },
+  {
+    id: 8,
+    name: "Navy Dress Pants",
+    category: "trousers",
+    price: 89.99,
+    image: pantalonBleuMarine,
+    description: "Formal navy pants.",
+    sizes: ["M", "L", "XL"],
+    colors: ["Navy"],
+  },
+  {
+    id: 9,
+    name: "Brown Tailored Trousers",
+    category: "trousers",
+    price: 94.99,
+    image: pantalonMarron,
+    description: "Tailored brown pants.",
+    sizes: ["S", "M", "L"],
+    colors: ["Brown"],
+  },
+  {
+    id: 10,
+    name: "Studded Black Hobo Bag",
+    category: "bags",
+    price: 129.99,
+    image: blackBag,
+    description: "Chic black bag.",
+    sizes: [],
+    colors: ["Black"],
+  },
+  {
+    id: 11,
+    name: "Black Baseball Cap",
+    category: "hats",
+    price: 29.99,
+    image: casquette,
+    description: "Classic cap.",
+    sizes: [],
+    colors: ["Black"],
+  },
+];
 
 const ItemPreview = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    toast.success("Added to cart!");
-  };
+  // ✅ Find item dynamically based on URL param
+  const itemId = Number(id);
+  const item = MOCK_ITEMS.find((i) => i.id === itemId);
 
-  const handleLike = () => {
-    toast.success("Added to favorites!");
-  };
+  if (!item) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg text-muted-foreground">Item not found</p>
+      </div>
+    );
+  }
+
+  const handleAddToCart = () => toast.success("Added to cart!");
+  const handleLike = () => toast.success("Added to favorites!");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary to-background">
@@ -49,8 +170,8 @@ const ItemPreview = () => {
         <Card className="overflow-hidden">
           <div className="aspect-[3/4] overflow-hidden">
             <img
-              src={MOCK_ITEM.image}
-              alt={MOCK_ITEM.name}
+              src={item.image}
+              alt={item.name}
               className="w-full h-full object-cover"
             />
           </div>
@@ -60,48 +181,54 @@ const ItemPreview = () => {
         <div className="space-y-6">
           <div>
             <p className="text-sm text-muted-foreground uppercase tracking-wide">
-              {MOCK_ITEM.category}
+              {item.category}
             </p>
             <h1 className="text-3xl font-bold text-foreground mt-1">
-              {MOCK_ITEM.name}
+              {item.name}
             </h1>
             <p className="text-2xl font-bold text-primary mt-2">
-              ${MOCK_ITEM.price}
+              ${item.price.toFixed(2)}
             </p>
           </div>
 
+          {/* Description */}
           <Card>
             <CardContent className="p-6">
               <h2 className="font-semibold text-lg mb-2">Description</h2>
-              <p className="text-muted-foreground">{MOCK_ITEM.description}</p>
+              <p className="text-muted-foreground">{item.description}</p>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6 space-y-4">
-              <div>
-                <h2 className="font-semibold text-lg mb-2">Available Sizes</h2>
-                <div className="flex gap-2 flex-wrap">
-                  {MOCK_ITEM.sizes.map((size) => (
-                    <Button key={size} variant="outline" size="sm">
-                      {size}
-                    </Button>
-                  ))}
+          {/* Sizes & Colors */}
+          {item.sizes.length > 0 && (
+            <Card>
+              <CardContent className="p-6 space-y-4">
+                <div>
+                  <h2 className="font-semibold text-lg mb-2">
+                    Available Sizes
+                  </h2>
+                  <div className="flex gap-2 flex-wrap">
+                    {item.sizes.map((size) => (
+                      <Button key={size} variant="outline" size="sm">
+                        {size}
+                      </Button>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <h2 className="font-semibold text-lg mb-2">Colors</h2>
-                <div className="flex gap-2">
-                  {MOCK_ITEM.colors.map((color) => (
-                    <Button key={color} variant="outline" size="sm">
-                      {color}
-                    </Button>
-                  ))}
+                <div>
+                  <h2 className="font-semibold text-lg mb-2">Colors</h2>
+                  <div className="flex gap-2 flex-wrap">
+                    {item.colors.map((color) => (
+                      <Button key={color} variant="outline" size="sm">
+                        {color}
+                      </Button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </div>
 
