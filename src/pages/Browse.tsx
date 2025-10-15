@@ -4,17 +4,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 // ✅ Local imports for static assets (Vite handles these properly)
-import tshirtNoir from "@/assets/clothes/tshirt-noir.jpg";
-import topBleu from "@/assets/clothes/top-bleu.jpg";
-import vesteBleuMarine from "@/assets/clothes/veste-bleu-marine.jpg";
-import brownJacket from "@/assets/clothes/brown-jacket.jpg";
-import pullGris from "@/assets/clothes/pull-gris.jpg";
-import chaussure from "@/assets/clothes/chaussure.jpg";
-import jeanBleu from "@/assets/clothes/jean-bleu.jpg";
-import pantalonBleuMarine from "@/assets/clothes/pantalon-bleu-marine.jpg";
-import pantalonMarron from "@/assets/clothes/pantalon-marron.jpg";
-import blackBag from "@/assets/clothes/black-bag.jpg";
-import casquette from "@/assets/clothes/casquette.jpg";
+import tshirtNoir from "/assets/clothes/tshirt-noir.jpg";
+import topBleu from "/assets/clothes/top-bleu.jpg";
+import vesteBleuMarine from "/assets/clothes/veste-bleu-marine.jpg";
+import brownJacket from "/assets/clothes/brown-jacket.jpg";
+import pullGris from "/assets/clothes/pull-gris.jpg";
+import chaussure from "/assets/clothes/chaussure.jpg";
+import jeanBleu from "/assets/clothes/jean-bleu.jpg";
+import pantalonBleuMarine from "/assets/clothes/pantalon-bleu-marine.jpg";
+import pantalonMarron from "/assets/clothes/pantalon-marron.jpg";
+import blackBag from "/assets/clothes/black-bag.jpg";
+import casquette from "/assets/clothes/casquette.jpg";
 
 // ✅ Centralized mock dataset
 const MOCK_ITEMS = [
