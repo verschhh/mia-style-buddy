@@ -51,7 +51,7 @@ const MOCK_ITEMS = [
     name: "Blue Cargo Jeans",
     category: "trousers",
     price: 69.99,
-    image: "/assets/clothes/jean-bleu.jpg",
+    image: "/assets/clothes/Jean-bleu.jpg",
   },
   {
     id: 8,

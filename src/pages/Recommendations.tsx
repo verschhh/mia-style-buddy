@@ -60,7 +60,7 @@ const MOCK_RECOMMENDATIONS = {
       id: 5,
       name: "Blue Cargo Jeans",
       price: 69.99,
-      image: "/assets/clothes/jean-bleu.jpg",
+      image: "/assets/clothes/Jean-bleu.jpg",
     },
     {
       id: 6,
