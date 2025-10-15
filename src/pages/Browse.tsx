@@ -3,91 +3,83 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
-// ✅ Local imports for static assets (Vite handles these properly)
-import tshirtNoir from "/assets/clothes/tshirt-noir.jpg";
-import topBleu from "/assets/clothes/top-bleu.jpg";
-import vesteBleuMarine from "/assets/clothes/veste-bleu-marine.jpg";
-import brownJacket from "/assets/clothes/brown-jacket.jpg";
-import pullGris from "/assets/clothes/pull-gris.jpg";
-import chaussure from "/assets/clothes/chaussure.jpg";
-import jeanBleu from "/assets/clothes/jean-bleu.jpg";
-import pantalonBleuMarine from "/assets/clothes/pantalon-bleu-marine.jpg";
-import pantalonMarron from "/assets/clothes/pantalon-marron.jpg";
-import blackBag from "/assets/clothes/black-bag.jpg";
-import casquette from "/assets/clothes/casquette.jpg";
-
-// ✅ Centralized mock dataset
 const MOCK_ITEMS = [
   {
     id: 1,
     name: "Black T-Shirt",
     category: "tshirt",
     price: 34.99,
-    image: tshirtNoir,
+    image: "/assets/clothes/tshirt-noir.jpg",
   },
-  { id: 2, name: "Blue Top", category: "tshirt", price: 44.99, image: topBleu },
+  {
+    id: 2,
+    name: "Blue Top",
+    category: "tshirt",
+    price: 44.99,
+    image: "/assets/clothes/top-bleu.jpg",
+  },
   {
     id: 3,
     name: "Navy Blazer Jacket",
     category: "jacket",
     price: 129.99,
-    image: vesteBleuMarine,
+    image: "/assets/clothes/veste-bleu-marine.jpg",
   },
   {
     id: 4,
     name: "Brown Bomber Jacket",
     category: "jacket",
     price: 149.99,
-    image: brownJacket,
+    image: "/assets/clothes/brown-jacket.jpg",
   },
   {
     id: 5,
     name: "Grey Sweater",
     category: "jacket",
     price: 79.99,
-    image: pullGris,
+    image: "/assets/clothes/pull-gris.jpg",
   },
   {
     id: 6,
     name: "Brown Suede Boots",
     category: "shoes",
     price: 119.99,
-    image: chaussure,
+    image: "/assets/clothes/chaussure.jpg",
   },
   {
     id: 7,
     name: "Blue Cargo Jeans",
     category: "trousers",
     price: 69.99,
-    image: jeanBleu,
+    image: "/assets/clothes/jean-bleu.jpg",
   },
   {
     id: 8,
     name: "Navy Dress Pants",
     category: "trousers",
     price: 89.99,
-    image: pantalonBleuMarine,
+    image: "/assets/clothes/pantalon-bleu-marine.jpg",
   },
   {
     id: 9,
     name: "Brown Tailored Trousers",
     category: "trousers",
     price: 94.99,
-    image: pantalonMarron,
+    image: "/assets/clothes/pantalon-marron.jpg",
   },
   {
     id: 10,
     name: "Studded Black Hobo Bag",
     category: "bags",
     price: 129.99,
-    image: blackBag,
+    image: "/assets/clothes/black-bag.jpg",
   },
   {
     id: 11,
     name: "Black Baseball Cap",
     category: "hats",
     price: 29.99,
-    image: casquette,
+    image: "/assets/clothes/casquette.jpg",
   },
 ];
 

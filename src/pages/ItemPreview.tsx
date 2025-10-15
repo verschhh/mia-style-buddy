@@ -4,27 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Heart, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 
-// Reuse the same dataset as Browse
-import tshirtNoir from "/assets/clothes/tshirt-noir.jpg";
-import topBleu from "/assets/clothes/top-bleu.jpg";
-import vesteBleuMarine from "/assets/clothes/veste-bleu-marine.jpg";
-import brownJacket from "/assets/clothes/brown-jacket.jpg";
-import pullGris from "/assets/clothes/pull-gris.jpg";
-import chaussure from "/assets/clothes/chaussure.jpg";
-import jeanBleu from "/assets/clothes/jean-bleu.jpg";
-import pantalonBleuMarine from "/assets/clothes/pantalon-bleu-marine.jpg";
-import pantalonMarron from "/assets/clothes/pantalon-marron.jpg";
-import blackBag from "/assets/clothes/black-bag.jpg";
-import casquette from "/assets/clothes/casquette.jpg";
-
-// Same data structure as Browse
 const MOCK_ITEMS = [
   {
     id: 1,
     name: "Black T-Shirt",
     category: "tshirt",
     price: 34.99,
-    image: tshirtNoir,
+    image: "/assets/clothes/tshirt-noir.jpg",
     description: "A timeless classic in black.",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     colors: ["Black", "White", "Gray"],
@@ -34,7 +20,7 @@ const MOCK_ITEMS = [
     name: "Blue Top",
     category: "tshirt",
     price: 44.99,
-    image: topBleu,
+    image: "/assets/clothes/top-bleu.jpg",
     description: "Comfortable blue top.",
     sizes: ["S", "M", "L"],
     colors: ["Blue", "White"],
@@ -44,7 +30,7 @@ const MOCK_ITEMS = [
     name: "Navy Blazer Jacket",
     category: "jacket",
     price: 129.99,
-    image: vesteBleuMarine,
+    image: "/assets/clothes/veste-bleu-marine.jpg",
     description: "Smart navy blazer.",
     sizes: ["S", "M", "L", "XL"],
     colors: ["Navy", "Black"],
@@ -54,7 +40,7 @@ const MOCK_ITEMS = [
     name: "Brown Bomber Jacket",
     category: "jacket",
     price: 149.99,
-    image: brownJacket,
+    image: "/assets/clothes/brown-jacket.jpg",
     description: "Stylish brown bomber.",
     sizes: ["M", "L", "XL"],
     colors: ["Brown", "Tan"],
@@ -64,7 +50,7 @@ const MOCK_ITEMS = [
     name: "Grey Sweater",
     category: "jacket",
     price: 79.99,
-    image: pullGris,
+    image: "/assets/clothes/pull-gris.jpg",
     description: "Cozy grey sweater.",
     sizes: ["S", "M", "L"],
     colors: ["Grey"],
@@ -74,7 +60,7 @@ const MOCK_ITEMS = [
     name: "Brown Suede Boots",
     category: "shoes",
     price: 119.99,
-    image: chaussure,
+    image: "/assets/clothes/chaussure.jpg",
     description: "Premium suede boots.",
     sizes: ["40", "41", "42", "43"],
     colors: ["Brown"],
@@ -84,7 +70,7 @@ const MOCK_ITEMS = [
     name: "Blue Cargo Jeans",
     category: "trousers",
     price: 69.99,
-    image: jeanBleu,
+    image: "/assets/clothes/jean-bleu.jpg",
     description: "Casual cargo jeans.",
     sizes: ["S", "M", "L", "XL"],
     colors: ["Blue"],
@@ -94,7 +80,7 @@ const MOCK_ITEMS = [
     name: "Navy Dress Pants",
     category: "trousers",
     price: 89.99,
-    image: pantalonBleuMarine,
+    image: "/assets/clothes/pantalon-bleu-marine.jpg",
     description: "Formal navy pants.",
     sizes: ["M", "L", "XL"],
     colors: ["Navy"],
@@ -104,7 +90,7 @@ const MOCK_ITEMS = [
     name: "Brown Tailored Trousers",
     category: "trousers",
     price: 94.99,
-    image: pantalonMarron,
+    image: "/assets/clothes/pantalon-marron.jpg",
     description: "Tailored brown pants.",
     sizes: ["S", "M", "L"],
     colors: ["Brown"],
@@ -114,7 +100,7 @@ const MOCK_ITEMS = [
     name: "Studded Black Hobo Bag",
     category: "bags",
     price: 129.99,
-    image: blackBag,
+    image: "/assets/clothes/black-bag.jpg",
     description: "Chic black bag.",
     sizes: [],
     colors: ["Black"],
@@ -124,7 +110,7 @@ const MOCK_ITEMS = [
     name: "Black Baseball Cap",
     category: "hats",
     price: 29.99,
-    image: casquette,
+    image: "/assets/clothes/casquette.jpg",
     description: "Classic cap.",
     sizes: [],
     colors: ["Black"],

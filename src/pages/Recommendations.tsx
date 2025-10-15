@@ -12,33 +12,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Heart, X, Shirt } from "lucide-react";
 import { toast } from "sonner";
 
-// ✅ Proper image imports — Vite will fingerprint & bundle them
-import tshirtNoir from "/assets/clothes/tshirt-noir.jpg";
-import topBleu from "/assets/clothes/top-bleu.jpg";
-import vesteBleuMarine from "/assets/clothes/veste-bleu-marine.jpg";
-import brownJacket from "/assets/clothes/brown-jacket.jpg";
-import pullGris from "/assets/clothes/pull-gris.jpg";
-import chaussure from "/assets/clothes/chaussure.jpg";
-import jeanBleu from "/assets/clothes/jean-bleu.jpg";
-import pantalonBleuMarine from "/assets/clothes/pantalon-bleu-marine.jpg";
-import pantalonMarron from "/assets/clothes/pantalon-marron.jpg";
-import blackBag from "/assets/clothes/black-bag.jpg";
-import casquette from "/assets/clothes/casquette.jpg";
-
-// ✅ Strongly typed mock data
 const MOCK_RECOMMENDATIONS = {
   tshirt: [
     {
       id: 1,
       name: "Black T-Shirt",
       price: 34.99,
-      image: tshirtNoir,
+      image: "/assets/clothes/tshirt-noir.jpg",
     },
     {
       id: 2,
       name: "Blue Top",
       price: 44.99,
-      image: topBleu,
+      image: "/assets/clothes/top-bleu.jpg",
     },
   ],
   jacket: [
@@ -46,19 +32,19 @@ const MOCK_RECOMMENDATIONS = {
       id: 3,
       name: "Navy Blazer Jacket",
       price: 129.99,
-      image: vesteBleuMarine,
+      image: "/assets/clothes/veste-bleu-marine.jpg",
     },
     {
       id: 8,
       name: "Brown Bomber Jacket",
       price: 149.99,
-      image: brownJacket,
+      image: "/assets/clothes/brown-jacket.jpg",
     },
     {
       id: 9,
       name: "Grey Sweater",
       price: 79.99,
-      image: pullGris,
+      image: "/assets/clothes/pull-gris.jpg",
     },
   ],
   shoes: [
@@ -66,7 +52,7 @@ const MOCK_RECOMMENDATIONS = {
       id: 4,
       name: "Brown Suede Boots",
       price: 119.99,
-      image: chaussure,
+      image: "/assets/clothes/chaussure.jpg",
     },
   ],
   trousers: [
@@ -74,19 +60,19 @@ const MOCK_RECOMMENDATIONS = {
       id: 5,
       name: "Blue Cargo Jeans",
       price: 69.99,
-      image: jeanBleu,
+      image: "/assets/clothes/jean-bleu.jpg",
     },
     {
       id: 6,
       name: "Navy Dress Pants",
       price: 89.99,
-      image: pantalonBleuMarine,
+      image: "/assets/clothes/pantalon-bleu-marine.jpg",
     },
     {
       id: 7,
       name: "Brown Tailored Trousers",
       price: 94.99,
-      image: pantalonMarron,
+      image: "/assets/clothes/pantalon-marron.jpg",
     },
   ],
   bags: [
@@ -94,7 +80,7 @@ const MOCK_RECOMMENDATIONS = {
       id: 10,
       name: "Studded Black Hobo Bag",
       price: 129.99,
-      image: blackBag,
+      image: "/assets/clothes/black-bag.jpg",
     },
   ],
   hats: [
@@ -102,7 +88,7 @@ const MOCK_RECOMMENDATIONS = {
       id: 11,
       name: "Black Baseball Cap",
       price: 29.99,
-      image: casquette,
+      image: "/assets/clothes/casquette.jpg",
     },
   ],
 };
